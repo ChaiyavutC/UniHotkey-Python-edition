@@ -1,28 +1,23 @@
-from pynput.keyboard import Key, Listener
-import win32api
-import win32gui
+import function
 
-def on_press(key):
-    #print(f'{key} pressed')
-    if key == Key.alt_gr:
-        print('>>> I press RALT <<<')
-        #Toggle Micorphone
-        #https://stackoverflow.com/questions/50025927/how-mute-microphone-by-python
-        ###win32api, win32gui
-        WM_APPCOMMAND = 0x319
-        APPCOMMAND_MICROPHONE_VOLUME_MUTE = 0x180000
+##Keylogger
+import keyboard
 
-        hwnd_active = win32gui.GetForegroundWindow()
-        win32api.SendMessage(hwnd_active, WM_APPCOMMAND, None, APPCOMMAND_MICROPHONE_VOLUME_MUTE)
+###microphone list
+##https://pypi.org/project/pycaw/
+from ctypes import cast, POINTER
+from comtypes import CLSCTX_ALL
+from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+from pycaw.constants import CLSID_MMDeviceEnumerator
+### Get default device
+interface = AudioUtilities.GetMicrophone().Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+### Mute the default device
+cast(interface, POINTER(IAudioEndpointVolume)).SetMute(1, None)
+active_mic_mute = 1
 
-def on_release(key):
-    #print(f'{key} released')
-
-    if key == Key.esc:
-        # Stop listener
-        return False
+def action_right_alt():
+    print('Toggle mute mic')
+    #mic_default_toggle_mute()
     
-# Collect events until released
-with Listener(on_press=on_press,on_release=on_release) as listener:
-    print('... other code ...')
-    listener.join()
+keyboard.add_hotkey('Alt', action_right_alt, suppress=True, trigger_on_release=False)
+keyboard.wait()
