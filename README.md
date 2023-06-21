@@ -6,8 +6,6 @@ The universal utility program
 - all from old [repository](https://github.com/ChaiyavutC/UniHotkey-AHK-edition)
 - better ForgotToChnageKeyboardLang
 - bettrr UI
-- mostly features compatible with MacOS
-- support UniversalClipboardSync to android, ios
 - more Addition Menu
 - implement with Google Translate, ChatGPT
 - support with Voicemeeter, AudioRelay
@@ -17,3 +15,8 @@ The universal utility program
 - hotkey
 - gui
 - discord mic sync
+- support UniversalClipboardSync to android
+
+## Postpone
+- compatible with MacOS and Linux (I doesn't have both to test)
+- support UniversalClipboardSync to ios (I doesn't have iPhone)
