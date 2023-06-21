@@ -3,7 +3,7 @@ The universal utility program
 ## This repository is the continue from [this](https://github.com/ChaiyavutC/UniHotkey-AHK-edition)
 
 ## Plan features
-- all from old [repository](https://github.com/ChaiyavutC/UniHotkey-AHK-edition)
+- all from [this repository](https://github.com/ChaiyavutC/UniHotkey-AHK-edition)
 - better ForgotToChnageKeyboardLang
 - bettrr UI
 - more Addition Menu
