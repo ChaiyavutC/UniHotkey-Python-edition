@@ -1,2 +1,6 @@
 
 *.pyc
+icon/mic.psd
+icon/mute mic.png
+icon/unmute mic.png
+*.code-workspace
